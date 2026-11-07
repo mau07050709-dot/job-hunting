@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Job Hunting — prueba local</title>
+<style>body{font:18px system-ui;max-width:700px;margin:40px auto;background:#101828;color:#f2f4f7}form{display:grid;gap:16px;padding:28px;background:#1d2939;border-radius:16px}label{display:grid;gap:6px}input,select,button{font:inherit;padding:10px;border-radius:7px}button{background:#81f1c5;border:0}output{display:block;white-space:pre-wrap;margin:20px}</style></head>
+<body><h1>Job Hunting · laboratorio local</h1><p>Vacante ficticia de prueba. Ninguna información se envía a una empresa.</p>
+<form id="application">
+<label>Nombre completo<input name="name" required></label>
+<label>Correo electrónico<input name="email" type="email" required></label>
+<label>Modalidad<select name="modality"><option value="remote">Remoto</option><option value="onsite">Presencial</option></select></label>
+<label>Documento de prueba<input name="cv" type="file" required></label>
+<label><span><input name="consent" type="checkbox" required> Confirmo que estos datos son ficticios</span></label>
+<button type="submit">Enviar prueba local</button></form>
+<output role="status" aria-live="polite"></output>
+<script>document.querySelector('form').addEventListener('submit',async e=>{
+e.preventDefault();const f=e.target.elements;const data={name:f.namedItem('name').value,email:f.namedItem('email').value,modality:f.namedItem('modality').value,file:f.namedItem('cv').files[0].name,consent:f.namedItem('consent').checked};
+const response=await fetch('/submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+const result=await response.json();document.querySelector('output').textContent='RECIBIDA: '+result.receipt;
+});</script></body></html>

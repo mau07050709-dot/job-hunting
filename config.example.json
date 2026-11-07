@@ -1,0 +1,10 @@
+{
+  "brave_path": null,
+  "data_dir": "data",
+  "browser_transport": "persistent",
+  "timeout_ms": 15000,
+  "headless": false,
+  "country": "Costa Rica",
+  "onsite_city": "Cartago",
+  "mode": "test"
+}

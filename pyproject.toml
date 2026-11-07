@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "job-hunting"
+version = "0.2.1"
+description = "Windows job discovery, local CV management and human-assisted Brave autofill"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["job-search", "resume", "brave", "desktop", "pyside6"]
+classifiers = ["Operating System :: Microsoft :: Windows", "Programming Language :: Python :: 3", "Topic :: Office/Business"]
+requires-python = ">=3.11"
+dependencies = ["playwright>=1.50,<2", "PySide6>=6.8,<7", "pypdf>=5,<7", "python-docx>=1.2,<2", "pdfplumber>=0.11,<1", "phonenumbers>=9,<10", "tzdata>=2025", "reportlab>=4,<5", "openpyxl>=3.1,<4", "lxml>=5,<7", "winrt-Windows.Media.Ocr>=4!10.0,<5!0; sys_platform == 'win32'", "winrt-Windows.Graphics.Imaging>=4!10.0,<5!0; sys_platform == 'win32'", "winrt-Windows.Storage.Streams>=4!10.0,<5!0; sys_platform == 'win32'", "winrt-Windows.Globalization>=4!10.0,<5!0; sys_platform == 'win32'", "winrt-Windows.Foundation>=4!10.0,<5!0; sys_platform == 'win32'"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+job-hunting = "autojob.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+autojob = ["testing/*.html"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+

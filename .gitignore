@@ -1,0 +1,56 @@
+# Local runtime state and secrets
+/data/
+/config.json
+.env
+.env.*
+!.env.example
+**/extension-pair.json
+**/notice-video.json
+**/section-backgrounds.json
+**/appearance.json
+**/brave-profile/
+**/browser-profile/
+**/credentials.json
+**/cookies.json
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+*.db
+*.db-*
+*.log
+*.har
+*.pem
+*.key
+*.pfx
+*.p12
+# Python, editors, generated distributions
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage*
+htmlcov/
+build/
+dist/
+backups/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+# User documents and captures
+*.pdf
+*.doc
+*.docx
+*.xlsx
+*.csv
+*.mp4
+*.webm
+screenshots/
+traces/
+# Nested export folders must not be re-exported
+GitHub_Public*/
+
+# Local verification artifacts
+.verification/

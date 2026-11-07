@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Job Hunting — Rellenar candidatura",
+  "version": "1.0.7",
+  "description": "Rellena solo la oferta seleccionada en Job Hunting. No envía solicitudes.",
+  "permissions": [
+    "scripting",
+    "tabs",
+    "storage",
+    "alarms"
+  ],
+  "host_permissions": [
+    "https://*/*",
+    "http://127.0.0.1:18746/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://127.0.0.1/jobmaxxing-wake"
+      ],
+      "js": [
+        "wake.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
