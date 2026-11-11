@@ -41,6 +41,8 @@ Run these commands from the repository root. Alternatively, double-click **Insta
 
 `config.example.json` documents supported configuration keys. `init` creates a local `config.json` and SQLite storage under `data/`. Both are excluded from the repository. Configure Brave's executable only if automatic discovery fails. Do not reuse a private installation's database or browser profile in a public repository.
 
+For a fresh setup, clone the repository into a new folder and run the Windows launchers from that folder. Add a person alias and import the CV from **Mis datos**. The imported files and preferences stay in the local installation.
+
 ## First-run workflow
 
 1. Open **MIS DATOS** and create/select a person alias.

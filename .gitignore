@@ -54,3 +54,8 @@ GitHub_Public*/
 
 # Local verification artifacts
 .verification/
+*.tmp
+*.lnk
+*.exe
+*.zip
+section-backgrounds/
